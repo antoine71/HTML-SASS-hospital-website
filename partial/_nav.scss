@@ -1,0 +1,88 @@
+/* ================== NAVIGATION BAR SETTINGS ==================== */
+
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+  @include gradientBackground;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  // only needed in medium and small screens
+  button {
+    display: none;
+  }
+
+  a {
+    color: $white-color;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
+
+/* ================== MEDIA QUERIES (MEDIUM SCREENS) ======================= */
+@media screen and (max-width: 1024px) {
+  nav {
+    .container {
+      button {
+        display: inline-block;
+        background: transparent;
+        color: $white-color;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &#close__nav-btn {
+          display: none;
+        }
+      }
+
+      ul {
+        position: fixed;
+        right: 5%; // aligns to the container which is 90% width
+        top: 5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        display: none; //hidden by default
+
+        li {
+          width: 100%;
+
+          a {
+            color: $white-color;
+            height: 100%;
+            display: block;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            background: linear-gradient(
+              $primary-color-variant,
+              darken($primary-color-variant, 12%)
+            );
+
+            &.btn {
+                background: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================== MEDIA QUERIES (SMALL SCREENS) ======================= */
+@media screen and (max-width: 600px) {
+}
