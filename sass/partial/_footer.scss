@@ -1,0 +1,74 @@
+footer {
+  background: $black-color;
+  color: $light-color;
+  margin-top: 6rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    padding: 6rem 0;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      & > h5 {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: $white-color;
+      }
+
+      a {
+        color: $light-color;
+        transition: all 400ms ease;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+
+      & > div {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+
+        & > small {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: solid 1px rgba($white-color, 0.2);
+  }
+}
+
+/* ================== MEDIA QUERIES (MEDIUM SCREENS) ======================= */
+@media screen and (max-width: 1024px) {
+  footer {
+    .container {
+      gap: 2rem;
+    }
+  }
+}
+
+/* ================== MEDIA QUERIES (SMALL SCREENS) ======================= */
+@media screen and (max-width: 600px) {
+  footer {
+    .container {
+      grid-template-columns: 1fr;
+      text-align: center;
+
+      .btn-primary,
+      article > div {
+        margin: 0 auto;
+      }
+    }
+  }
+}
